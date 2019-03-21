@@ -1,5 +1,10 @@
 package Server.Routes;
 
+import Server.Database.Database;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Sample Route, inspire yourself
  * @author Joscha Henningsen
@@ -19,6 +24,7 @@ public class MainPage extends Route{
      */
     @Override
     public void setupPage() {
+        String[][] question = {new String[]{"Beans","Powder", "Pads", "Capsules"}};
         setTemplateFile("html/index.html");
 
         vars.put("%title", "It Works!");
@@ -31,12 +37,20 @@ public class MainPage extends Route{
         vars.put("%page0active", "active");
         String content = "";
 
+        Database questions = databases.get(0);
         if (requestData.hasCookie("session")){
-            content += "aktiver nutzer";
+            ArrayList<String[]> res = questions.query("Select state Where id='"+requestData.getCookie("session")+"'");
+            if (res.size()!=0){
+                int status = Integer.parseInt(res.get(0)[0]);
+                content+=Arrays.toString(question[status]);
+            }
         }else {
             content += "jetzt starten!";
-            setCookie("session", (Math.random()*100000)+"");
+            String id = (Math.random()*100000)+"";
+            setCookie("session", id);
+            questions.query("Insert '"+id+"', 0");
         }
+
 
         vars.put("%content", content);
     }
