@@ -22,7 +22,7 @@ public abstract class Route {
     private String url;
     private boolean acceptsSubPages=false;
     private String contentType;
-
+    private HashMap<String, String> cookies;
 
     /**
      * Sets the route to be a page that gets request for sub urls
@@ -131,6 +131,15 @@ public abstract class Route {
         if (contentType==null||contentType=="")
             contentType="text/html";
         response.addHeader("Content-Type: "+contentType);
+        if (cookies!=null)
+            cookies.forEach((k, v)->response.setCookies(k, v));
         return response;
+    }
+
+
+    public void setCookie(String key, String value){
+        if (cookies==null)
+            cookies = new HashMap<>();
+        cookies.put(key, value);
     }
 }

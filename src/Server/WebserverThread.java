@@ -35,7 +35,7 @@ public class WebserverThread extends Thread {
     databases = new ArrayList<>();
     //important:
     routes.add(new MainPage());
-    databases.add(new Database("exampleDatabase", "id;name", 10));
+    databases.add(new Database("Sessions", "id;state", 10));
     this.logger = logger;
     dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
   }
