@@ -50,6 +50,7 @@ body{
     color: #8c8c8c;
     padding: 4rem;
     border: 5px solid white;
+    border-radius: 5px;
 }
 
 
@@ -73,9 +74,7 @@ body{
     color: #8c8c8c;
     padding: 4.5rem;
     border: 5px solid white;
-}
-.item:hover{
-    border: 5px solid grey;
+    border-radius: 5px;
 }
 
 .icon{
