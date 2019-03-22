@@ -22,7 +22,12 @@ public class Question {
         return questionStr;
     }
 
-    public void evaluate(){
-
+    public void evaluate(ArrayList<Coffee> coffees, String answer){
+        int answerindex = 0;
+        for (int i = 0; i < answers.length; i++) {
+            if (answers[i].equals(answer))
+                answerindex=i;
+        }
+        coffees.forEach();
     }
 }

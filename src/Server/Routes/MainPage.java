@@ -31,8 +31,7 @@ public class MainPage extends Route{
                 "Which kind of coffee?",
                 new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
                 new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{};
-                )
+                new int[][]{{1,0,0,1}})
         };
         setTemplateFile("html/index.html");
 

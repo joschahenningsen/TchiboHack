@@ -5,7 +5,5 @@ public class Coffee {
     int id;
     String name;
     String[] images;
-    int category;
-    int intensity;
-    int acid;
+    int[]values=new int[0,0,0,0,0];
 }
