@@ -74,7 +74,7 @@ public class MainPage extends Route{
                         "            </div>"),
                 new Question(
                         "How do you drink your Coffee?",
-                        new String[]{"Black", "With milk"},
+                        new String[]{"black", "milk"},
                         new int[][]{{4},{3}},
                         new int[][]{{-2, -2, -2, -2, -2, -2, -2},{-2, -2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
