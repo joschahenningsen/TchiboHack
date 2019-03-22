@@ -9,6 +9,7 @@ public class Question {
     int [][]answerExclusions;
     int [][] eval;
     private String html;
+    private int answerindex;
 
     public Question(String questionStr, String[]answers, int[][] answerExclusions, int[][] eval, String html){
         this.questionStr = questionStr;
@@ -16,6 +17,14 @@ public class Question {
         this.answerExclusions = answerExclusions;
         this.eval = eval;
         this.html = html;
+    }
+
+    public int getAnswerindex(){
+        return answerindex;
+    }
+
+    public int[] getExclusion(){
+        return answerExclusions[answerindex];
     }
 
     public String getQuestionStr(){
@@ -28,6 +37,7 @@ public class Question {
             if (answers[i].toUpperCase().equals(answer.toUpperCase()))
                 answerindex=i;
         }
+        this.answerindex=answerindex;
         int finalAnswerindex = answerindex;
         coffees.stream().filter(c->c.rank!=-1).forEach(c->{
             if (c.values[0]!=eval[finalAnswerindex][0]&&eval[finalAnswerindex][0]!=-2)//kind of coffee

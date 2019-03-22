@@ -90,9 +90,28 @@ public class MainPage extends Route{
             int currentQuestion = remainingQuestions.get(requestData.getCookie("session"))[0];
             String answer = requestData.POST("answer");
             String ssid = requestData.getCookie("session");
+            int[] remainingQs=remainingQuestions.get(ssid);
 
             coffees = userlists.get(ssid);
             questions[currentQuestion].evaluate(coffees, answer);
+
+            int[] removeanswers=questions[currentQuestion].getExclusion();
+            int remove = 0;
+            for (int i = 0; i < remainingQs.length; i++) {
+                for (int j = 0; j < removeanswers.length; j++) {
+                    if (remainingQs[i]==removeanswers[j]){
+                        remove++;
+                        remainingQs[i]=-1;
+                    }
+                }
+            }
+            int[]newremaining=new int[remainingQs.length-remove];
+            int index=0;
+            for (int i = 0; i < remainingQs.length; i++) {
+                if (remainingQs[i]!=-1)
+                    newremaining[index++]=remainingQs[i];
+            }
+
             coffees.forEach(coffee -> System.out.println(coffee.getRank()));
         }
     }

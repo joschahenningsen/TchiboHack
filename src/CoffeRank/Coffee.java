@@ -39,4 +39,5 @@ public class Coffee {
     public String toString(){
         return values[0]+";"+rank;
     }
+
 }
