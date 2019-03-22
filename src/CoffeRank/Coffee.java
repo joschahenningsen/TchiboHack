@@ -31,4 +31,12 @@ public class Coffee {
         this.description=description;
         this.values=new int[]{type, aroma, espresso, strength, fairtrade, decaf};
     }
+
+    public double getRank(){
+        return rank;
+    }
+
+    public String toString(){
+        return values[0]+";"+rank;
+    }
 }

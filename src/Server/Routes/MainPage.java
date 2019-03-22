@@ -93,6 +93,7 @@ public class MainPage extends Route{
 
             coffees = userlists.get(ssid);
             questions[currentQuestion].evaluate(coffees, answer);
+            coffees.forEach(coffee -> System.out.println(coffee.getRank()));
         }
     }
 }
