@@ -21,7 +21,7 @@ public class Config {
         //default value pairs that get replaced by the TemplateProcessor on each site you use it on
         defaultReplacements.put("%defaultheader", "<link rel=\"stylesheet\" " +
                 "href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\">\n" +
-                "    <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\"></script>\n" +
+                "    <script src=\"https://code.jquery.com/jquery-3.3.1.min.js\"></script>\n" +
                 "    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\"></script>\n" +
                 "    <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\"></script>\n" +
                 "    <script src=\"js/main.js\"></script>\n" +

@@ -50,6 +50,29 @@ public class MainPage extends Route{
                 "            <div onclick=\"clicked('instant');\" class=\"item\">\n" +
                 "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
                 "                Instant\n" +
+                "            </div>"),new Question(
+                "Which kind of coffee?",
+                new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
+                new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
+                new int[][]{{1,0,0,1},{1,0,0,1}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/beans.png\">\n" +
+                "                Beans\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('powder');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/powder.png\">\n" +
+                "                Powder\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('capsules');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/capsules.png\">\n" +
+                "                Capsules\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('pads');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/pads.png\">\n" +
+                "                Pads\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('instant');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
+                "                Instant\n" +
                 "            </div>")
         };
         ArrayList<Coffee> coffees;
@@ -64,9 +87,15 @@ public class MainPage extends Route{
                 vars.put("%questiontitle", questions[qnum].getQuestionStr());
                 vars.put("%options", questions[qnum].getHtml());
             } else {
-                String id = (Math.random() * 100000) + "";
+                String id = ((Math.random() * 100000) + "").replaceAll("\\.", "");
                 setCookie("session", id);
                 setCookie("question", "0");
+                String questionsStr="0";
+                for (int i = 1; i < 20; i++) {
+                    questionsStr+="a"+i;
+                }
+                System.out.println("Insert id,questions Values '"+id+"','"+questionsStr+"'");
+                databases.get(1).query("Insert id,questions Values '"+id+"','"+questionsStr+"'");
                 coffees = new ArrayList<>();
                 databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
                         row -> coffees.add(
@@ -82,7 +111,9 @@ public class MainPage extends Route{
                 vars.put("%options", questions[0].getHtml());
             }
         }else {
-            setBody("nextquestion");
+
+            setCookie("question", Integer.parseInt(requestData.getCookie("question")+1)+"");
+            setBody(questions[Integer.parseInt(requestData.getCookie("question"))].getHtml());
         }
     }
 }
