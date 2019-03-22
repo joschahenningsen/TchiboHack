@@ -41,6 +41,7 @@ public class WebserverThread extends Thread {
     mainPage.setUserlists(userlists);
     routes.add(mainPage);
     databases.add(new Database("Coffees", "id;name;url;price;image;description;type;aroma;espresso;strength;fairtrade;decaf", 10));
+    databases.add(new Database("remainingQuestions", "id;questions", 10));
     this.logger = logger;
     dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
   }
