@@ -24,6 +24,7 @@ function beanClicked(number) {
 }
 
 function sendStrength() {
+    alert();
     $.ajax({
         type: "POST",
         url: "/",
