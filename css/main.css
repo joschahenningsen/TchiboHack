@@ -76,9 +76,6 @@ body{
     border: 5px solid white;
     border-radius: 5px;
 }
-.item:hover{
-    border: 5px solid grey;
-}
 
 .icon{
     width: 40%;
