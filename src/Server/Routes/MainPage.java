@@ -142,8 +142,9 @@ public class MainPage extends Route{
                                                     "<img id='bean6' onmouseover='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
                                 "" +
                                 "</div>" +
-                                                "<div class='nextbtn'>Next</div>"+
-                                "</div>")
+                                "</div>"+
+                                                "<input id='stength' type='hidden' value='3'>"+
+                        "<div onclick='sendStrength()' class='nextbtn'>Next</div>")
         };
         ArrayList<Coffee> coffees=null;
 
