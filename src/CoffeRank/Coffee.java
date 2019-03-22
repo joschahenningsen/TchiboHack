@@ -22,14 +22,15 @@ public class Coffee {
                   int espresso,
                   int strength,
                   int fairtrade,
-                  int decaf){
+                  int decaf,
+                  int capsule){
         this.id=id;
         this.name=name;
         this.url=url;
         this.price=price;
         this.image=image;
         this.description=description;
-        this.values=new int[]{type, aroma, espresso, strength, fairtrade, decaf};
+        this.values=new int[]{type, aroma, espresso, strength, fairtrade, decaf, capsule};
     }
 
     public double getRank(){

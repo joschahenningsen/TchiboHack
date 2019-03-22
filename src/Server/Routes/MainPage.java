@@ -81,7 +81,8 @@ public class MainPage extends Route{
                                         Integer.parseInt(row[8]),
                                         Integer.parseInt(row[9]),
                                         Integer.parseInt(row[10]),
-                                        Integer.parseInt(row[11]))));
+                                        Integer.parseInt(row[11]),
+                                        Integer.parseInt(row[12]))));
                 userlists.put(id, coffees);
                 vars.put("%questiontitle", questions[0].getQuestionStr());
                 vars.put("%options", questions[0].getHtml());
