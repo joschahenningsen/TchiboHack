@@ -168,14 +168,14 @@ public class MainPage extends Route{
                                 "                Earthy\n" +
                                 "            </div>"),
                 new Question(
-                        "Do you want your Coffee to be decaffeinated?",
+                        "Do you want decaffeinated coffee?",
                         new String[]{"yes", "no"},
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
                                 "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
-                                "                Decaffeined\n" +
+                                "                Decaffeinated\n" +
                                 "            </div>\n" +
                                 "<div onclick='send(\"decaf\")' class='nextbtn'>Next</div>"),
                 new Question(
@@ -190,13 +190,14 @@ public class MainPage extends Route{
                                 "            </div>\n" +
                                 "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>"),
                 new Question(
-                        "Do you want your Coffee to be Decaffeined or Fair Trade?",
+                        "Would you like any extras?",
                         new String[]{"decaf", "fairtrade", "decaffairtrade", ""},
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
                                 "<img class=\"icon3\" src=\"img/decaf.png\">\n" +
-                                "                Decaffeined\n" +
+                                "                Decaffeinated\n" +
                                 "            </div>"+
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\"" +
                                         "<img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
@@ -219,7 +220,7 @@ public class MainPage extends Route{
                 String id = ((Math.random() * 100000) + "").replaceAll("\\.", "");
                 setCookie("session", id);
                 coffees = new ArrayList<>();
-                remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9});
+                remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9,10});
                 ArrayList<Coffee> finalCoffees = coffees;
                 databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf,capsule Where '1'='1'").forEach(
                         row -> finalCoffees.add(
