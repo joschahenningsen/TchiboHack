@@ -30,7 +30,8 @@ public class MainPage extends Route{
         Question[] questions = {new Question(
                 "Which kind of coffee?",
                 new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
-                new int[][]{}
+                new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
+                new int[][]{};
                 )
         };
         setTemplateFile("html/index.html");

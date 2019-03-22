@@ -9,15 +9,20 @@ public class Question {
     String questionStr;
     String[] answers;
     int [][]answerExclusions;
-    Consumer<ArrayList<Coffee>> consumer;
+    int [][] eval;
 
-    public Question(String questionStr, String[]answers, int[][] answerExclusions, BiConsumer<String, ArrayList<Coffee>> consumer){
+    public Question(String questionStr, String[]answers, int[][] answerExclusions, int[][] eval){
         this.questionStr = questionStr;
         this.answers = answers;
         this.answerExclusions = answerExclusions;
+        this.eval = eval;
     }
 
     public String getQuestionStr(){
         return questionStr;
+    }
+
+    public void evaluate(){
+
     }
 }
