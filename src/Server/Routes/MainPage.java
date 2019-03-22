@@ -52,34 +52,37 @@ public class MainPage extends Route{
                 "                Instant\n" +
                 "            </div>")
         };
-        setTemplateFile("html/index.html");
+        ArrayList<Coffee> coffees;
 
+        if (requestData.POST("answer")==null) {
+            setTemplateFile("html/index.html");
+            vars.put("%title", "Tchibo | Coffe For Everyone!");
+            if (requestData.hasCookie("session") && userlists.containsKey(requestData.getCookie("session"))) {
+                coffees = userlists.get(requestData.getCookie("session"));
+                int qnum = Integer.parseInt(requestData.getCookie("question"));
 
-        if (requestData.hasCookie("session")&&userlists.containsKey(requestData.getCookie("session"))){
-            ArrayList<Coffee>coffees=userlists.get(requestData.getCookie("session"));
-            int qnum=Integer.parseInt(requestData.getCookie("question"));
-
-            vars.put("%questiontitle", questions[qnum].getQuestionStr());
-            vars.put("%options", questions[qnum].getHtml());
+                vars.put("%questiontitle", questions[qnum].getQuestionStr());
+                vars.put("%options", questions[qnum].getHtml());
+            } else {
+                String id = (Math.random() * 100000) + "";
+                setCookie("session", id);
+                setCookie("question", "0");
+                coffees = new ArrayList<>();
+                databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
+                        row -> coffees.add(
+                                new Coffee(row[0], row[1], row[2], row[3], row[4], row[5],
+                                        Integer.parseInt(row[6]),
+                                        Integer.parseInt(row[7]),
+                                        Integer.parseInt(row[8]),
+                                        Integer.parseInt(row[9]),
+                                        Integer.parseInt(row[10]),
+                                        Integer.parseInt(row[11]))));
+                userlists.put(id, coffees);
+                vars.put("%questiontitle", questions[0].getQuestionStr());
+                vars.put("%options", questions[0].getHtml());
+            }
         }else {
-            String id = (Math.random()*100000)+"";
-            setCookie("session", id);
-            setCookie("question", "0");
-            ArrayList<Coffee> coffees = new ArrayList<>();
-            databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
-                    row->coffees.add(
-                            new Coffee(row[0],row[1],row[2],row[3],row[4],row[5],
-                                    Integer.parseInt(row[6]),
-                                    Integer.parseInt(row[7]),
-                                    Integer.parseInt(row[8]),
-                                    Integer.parseInt(row[9]),
-                                    Integer.parseInt(row[10]),
-                                    Integer.parseInt(row[11]))));
-            userlists.put(id, coffees);
-            vars.put("%questiontitle", questions[0].getQuestionStr());
-            vars.put("%options", questions[0].getHtml());
-
-
+            setBody("nextquestion");
         }
     }
 }
