@@ -31,8 +31,8 @@ public class MainPage extends Route{
         Question[] questions = {new Question(
                 "Which kind of coffee?",
                 new String[]{"Beans", "Powder", "Capsules", "Pads", "Instant"},
-                new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{0, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
+                new int[][]{{1},{1},{8,9},{1,2,3,4,6,7,8,9},{1,2,3,4,5,6,8,9}},
+                new int[][]{{0, -2, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
                 "            </div>\n" +
@@ -52,10 +52,26 @@ public class MainPage extends Route{
                 "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
                 "                Instant\n" +
                 "            </div>"),new Question(
-                "second question?",
-                new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
-                new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{1,0,0,1},{1,0,0,1}}, "Number two!")
+                "Which machine do you use?",
+                new String[]{"Dolce Gusto", "Nespresso", "Cafissimo", "QBO"},
+                new int[][]{},
+                new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 2},{-2, -2, -2, -2, -2, -2, 3},{-2, -2, -2, -2, -2, -2, 4},},
+                "            <div onclick=\"clicked('dg')\"class='item'> " +
+                "               <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                "                Dolce Gusto\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('nespresso');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                "                Nespresso\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('cafissimo');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                "                Cafissimo\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('qbo');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                "                QBO\n" +
+                "            </div>")
         };
         ArrayList<Coffee> coffees=null;
 
@@ -73,7 +89,7 @@ public class MainPage extends Route{
                 coffees = new ArrayList<>();
                 remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9,10});
                 ArrayList<Coffee> finalCoffees = coffees;
-                databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
+                databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf,capsule Where '1'='1'").forEach(
                         row -> finalCoffees.add(
                                 new Coffee(row[0], row[1], row[2], row[3], row[4], row[5],
                                         Integer.parseInt(row[6]),
@@ -100,7 +116,7 @@ public class MainPage extends Route{
             int remove = 0;
             for (int i = 0; i < remainingQs.length; i++) {
                 for (int j = 0; j < removeanswers.length; j++) {
-                    if (remainingQs[i]==removeanswers[j]){
+                    if (remainingQs[i]==removeanswers[j]||(j==0&&i==0)){
                         remove++;
                         remainingQs[i]=-1;
                     }
@@ -112,8 +128,11 @@ public class MainPage extends Route{
                 if (remainingQs[i]!=-1)
                     newremaining[index++]=remainingQs[i];
             }
+            remainingQuestions.put(ssid, newremaining);
 
             coffees.forEach(coffee -> System.out.println(coffee.getRank()));
+
+            setBody(questions[newremaining[0]].getQuestionStr()+"---"+questions[newremaining[0]].getHtml());
         }
     }
 }
