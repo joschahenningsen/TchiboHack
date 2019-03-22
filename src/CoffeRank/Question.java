@@ -10,12 +10,14 @@ public class Question {
     String[] answers;
     int [][]answerExclusions;
     int [][] eval;
+    private String html;
 
-    public Question(String questionStr, String[]answers, int[][] answerExclusions, int[][] eval){
+    public Question(String questionStr, String[]answers, int[][] answerExclusions, int[][] eval, String html){
         this.questionStr = questionStr;
         this.answers = answers;
         this.answerExclusions = answerExclusions;
         this.eval = eval;
+        this.html = html;
     }
 
     public String getQuestionStr(){
@@ -49,5 +51,9 @@ public class Question {
             }
 
         });
+    }
+
+    public String getHtml() {
+        return html;
     }
 }
