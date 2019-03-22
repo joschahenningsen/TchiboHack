@@ -77,3 +77,24 @@ function send(id) {
         });
     }
 }
+
+function checkandsend() {
+    res="";
+    if ($("#decaf").hasClass("yes")){
+        res+="decaf";
+    }
+    if ($("#fairtrade").hasClass("yes")){
+        res+="fairtrade";
+    }
+    $.ajax({
+        type: "POST",
+        url: "/",
+        data: {answer:res},
+        success: function (msg) {
+            title=msg.split("---")[0];
+            html=msg.split("---")[1];
+            $('.questionText').text(title);
+            $('.questionMain').html(html);
+        }
+    });
+}

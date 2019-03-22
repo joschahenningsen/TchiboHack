@@ -188,7 +188,22 @@ public class MainPage extends Route{
                                 "               <img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
-                                "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>")
+                                "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>"),
+                new Question(
+                        "Do you want your Coffee to be Decaffeined or Fair Trade?",
+                        new String[]{"decaf", "fairtrade", "decaffairtrade", ""},
+                        new int[][]{{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                                "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
+                                "<img class=\"icon3\" src=\"img/decaf.png\">\n" +
+                                "                Decaffeined\n" +
+                                "            </div>"+
+                                "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\"" +
+                                        "<img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
+                                "                Fairtrade\n" +
+                                "            </div>"+
+                                "<div onclick='checkandsend()' class='nextbtn'>Next</div>"
+                        )
         };
         ArrayList<Coffee> coffees=null;
 
