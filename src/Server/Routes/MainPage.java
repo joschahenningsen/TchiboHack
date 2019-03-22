@@ -143,8 +143,30 @@ public class MainPage extends Route{
                                 "" +
                                 "</div>" +
                                 "</div>"+
-                                                "<input id='stength' type='hidden' value='3'>"+
-                        "<div onclick='sendStrength()' class='nextbtn'>Next</div>")
+                                                "<input id='strength' type='hidden' value='3'>"+
+                        "<div onclick='sendStrength()' class='nextbtn'>Next</div>"),
+                new Question(
+
+                        "Which flavor do you prefer?",
+
+                        new String[]{"fruity", "nutty", "earthy"},
+
+                        new int[][]{{},{},{}},
+
+                        new int[][]{{-2, 1, -2, -2, -2, -2, -2},{-2, 0, -2, -2, -2, -2, -2},{-2, 2, -2, -2, -2, -2, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"clicked('fruity')\"class='item3'> " +
+                                "               <img class=\"icon3\" src=\"img/fruity.png\">\n" +
+                                "                Fruity\n" +
+                                "            </div>\n" +
+                                "<div onclick=\"clicked('nutty');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/nutty.png\">\n" +
+                                "                Nutty\n" +
+                                "            </div>" +
+                                "<div onclick=\"clicked('earthy');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/earthy.png\">\n" +
+                                "                Earthy\n" +
+                                "            </div>")
         };
         ArrayList<Coffee> coffees=null;
 

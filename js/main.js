@@ -24,11 +24,11 @@ function beanClicked(number) {
 }
 
 function sendStrength() {
-    alert();
+    answerval=$('#strength').val();
     $.ajax({
         type: "POST",
         url: "/",
-        data: {answer:$('#strength').val()},
+        data: {answer:answerval},
         success: function (msg) {
             title=msg.split("---")[0];
             html=msg.split("---")[1];
