@@ -31,7 +31,7 @@ public class MainPage extends Route{
         Question[] questions = {new Question(
                 "Which kind of coffee?",
                 new String[]{"Beans", "Powder", "Capsules", "Pads", "Instant"},
-                new int[][]{{1},{1},{8,9},{1,2,3,4,6,7,8,9},{1,2,3,4,5,6,8,9}},
+                new int[][]{{1,7,8},{1,7,8},{8,9},{1,2,3,4,6,7,8,9},{1,2,3,4,5,6,8,9}},
                 new int[][]{{0, -2, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
@@ -185,7 +185,7 @@ public class MainPage extends Route{
                         new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
-                                "               <img class=\"icon3\" src=\"img/fairtrade.png\">\n" +
+                                "               <img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
                                 "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>")
@@ -253,7 +253,11 @@ public class MainPage extends Route{
 
             coffees.forEach(coffee -> System.out.println(coffee.getRank()));
 
-            setBody(questions[newremaining[0]].getQuestionStr()+"---"+questions[newremaining[0]].getHtml());
+            if (questions.length>0)
+                setBody(questions[newremaining[0]].getQuestionStr()+"---"+questions[newremaining[0]].getHtml());
+            else{
+                setBody("result---result");
+            }
         }
     }
 }
