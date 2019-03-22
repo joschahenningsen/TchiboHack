@@ -1,8 +1,6 @@
 package CoffeRank;
 
 import java.util.ArrayList;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class Question {
     int index;

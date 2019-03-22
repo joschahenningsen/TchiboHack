@@ -64,7 +64,7 @@ public class HttpResponse {
     headers.forEach(s -> responseBuilder.append("\r\n"+s));
     if (cookies!=null) {
       responseBuilder.append("\r\n");
-      cookies.forEach((o1, o2)->responseBuilder.append("Set-Cookie: "+o1+"="+o2));
+      cookies.forEach((o1, o2)->responseBuilder.append("Set-Cookie: "+o1+"="+o2+"\n"));
     }
     responseBuilder.append("\r\n\r\n"); //end of http header
     
