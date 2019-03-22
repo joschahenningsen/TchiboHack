@@ -31,7 +31,7 @@ public class MainPage extends Route{
                 "Which kind of coffee?",
                 new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
                 new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{1,0,0,1}})
+                new int[][]{{1,0,0,1},{1,0,0,1}})
         };
         setTemplateFile("html/index.html");
 
@@ -50,9 +50,16 @@ public class MainPage extends Route{
         }else {
             String id = (Math.random()*100000)+"";
             setCookie("session", id);
-
             ArrayList<Coffee> coffees = new ArrayList<>();
-            coffees.add(new Coffee());
+            databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
+                    row->coffees.add(
+                            new Coffee(row[0],row[1],row[2],row[3],row[4],row[5],
+                                    Integer.parseInt(row[6]),
+                                    Integer.parseInt(row[7]),
+                                    Integer.parseInt(row[8]),
+                                    Integer.parseInt(row[9]),
+                                    Integer.parseInt(row[10]),
+                                    Integer.parseInt(row[11]))));
             userlists.put(id, coffees);
         }
 
