@@ -13,5 +13,11 @@ function clicked(clicked) {
 }
 
 function beanClicked(number) {
-
+    for(i=1; i<7; i++){
+        if (number>=i){
+            $('#bean'+i).attr("src","img/beanOn.png");
+        }else{
+            $('#bean'+i).attr("src","img/beanOff.png");
+        }
+    }
 }

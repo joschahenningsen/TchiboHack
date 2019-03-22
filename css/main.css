@@ -110,3 +110,14 @@ body{
     margin-right: auto;
     width: 40vw;
 }
+
+.nextbtn {
+    text-align: center;
+    color: white;
+    font-size: large;
+    vertical-align: center;
+    width: 300px;
+    height: 150px;
+    border-radius: 50px;
+    background-color: #dbb96c;
+}

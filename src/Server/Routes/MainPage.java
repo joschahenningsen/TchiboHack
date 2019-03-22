@@ -134,14 +134,15 @@ public class MainPage extends Route{
                                         "<div class='beanmaincontainer'>" +
                                         "<img src='img/coffeIcon.png' class='coffeeIcon'>" +
                                                 "<div class='beanContainer'>" +
-                                                    "<img onclick='beanClicked(1)' class='bean' src='img/beanOn.png'>" +
-                                                    "<img onclick='beanClicked(2)' class='bean' src='img/beanOn.png'>" +
-                                                    "<img onclick='beanClicked(3)' class='bean' src='img/beanOn.png'>" +
-                                                    "<img onclick='beanClicked(4)' class='bean' src='img/beanOff.png'>" +
-                                                    "<img onclick='beanClicked(5)' class='bean' src='img/beanOff.png'>" +
-                                                    "<img onclick='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
+                                                    "<img id='bean1' onmouseover='beanClicked(1)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img id='bean2' onmouseover='beanClicked(2)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img id='bean3' onmouseover='beanClicked(3)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img id='bean4' onmouseover='beanClicked(4)' class='bean' src='img/beanOff.png'>" +
+                                                    "<img id='bean5' onmouseover='beanClicked(5)' class='bean' src='img/beanOff.png'>" +
+                                                    "<img id='bean6' onmouseover='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
                                 "" +
                                 "</div>" +
+                                                "<div class='nextbtn'>Next</div>"+
                                 "</div>")
         };
         ArrayList<Coffee> coffees=null;
