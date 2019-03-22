@@ -9,6 +9,7 @@ public class Question {
     int [][]answerExclusions;
     int [][] eval;
     private String html;
+    private int answerindex;
 
     public Question(String questionStr, String[]answers, int[][] answerExclusions, int[][] eval, String html){
         this.questionStr = questionStr;
@@ -18,6 +19,14 @@ public class Question {
         this.html = html;
     }
 
+    public int getAnswerindex(){
+        return answerindex;
+    }
+
+    public int[] getExclusion(){
+        return answerExclusions[answerindex];
+    }
+
     public String getQuestionStr(){
         return questionStr;
     }
@@ -25,9 +34,10 @@ public class Question {
     public void evaluate(ArrayList<Coffee> coffees, String answer){
         int answerindex = 0;
         for (int i = 0; i < answers.length; i++) {
-            if (answers[i].equals(answer))
+            if (answers[i].toUpperCase().equals(answer.toUpperCase()))
                 answerindex=i;
         }
+        this.answerindex=answerindex;
         int finalAnswerindex = answerindex;
         coffees.stream().filter(c->c.rank!=-1).forEach(c->{
             if (c.values[0]!=eval[finalAnswerindex][0]&&eval[finalAnswerindex][0]!=-2)//kind of coffee

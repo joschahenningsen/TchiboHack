@@ -31,17 +31,18 @@ public class WebserverThread extends Thread {
    * Make sure to include every Route in this method you want to be publicly available
    * @param client
    * @param userlists
+   * @param remainingQuestions
    */
-  public WebserverThread(Socket client, Logger logger, HashMap<String, ArrayList<Coffee>> userlists) {
+  public WebserverThread(Socket client, Logger logger, HashMap<String, ArrayList<Coffee>> userlists, HashMap<String, int[]> remainingQuestions) {
     this.client = client;
     routes=new ArrayList<>();
     databases = new ArrayList<>();
     //important:
     MainPage mainPage=new MainPage();
     mainPage.setUserlists(userlists);
+    mainPage.setRemainingQuestions(remainingQuestions);
     routes.add(mainPage);
     databases.add(new Database("Coffees", "id;name;url;price;image;description;type;aroma;espresso;strength;fairtrade;decaf", 10));
-    databases.add(new Database("remainingQuestions", "id;questions", 10));
     this.logger = logger;
     dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
   }
