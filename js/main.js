@@ -69,10 +69,7 @@ function send(id) {
             url: "/",
             data: {answer:"no"},
             success: function (msg) {
-                title=msg.split("---")[0];
-                html=msg.split("---")[1];
-                $('.questionText').text(title);
-                $('.questionMain').html(html);
+                $("body").html(msg);
             }
         });
     }

@@ -281,7 +281,17 @@ public class MainPage extends Route{
 
                 coffees.forEach(c->System.out.println(c));
 
-                setTemplateFile("resultpage.html");
+                setTemplateFile("html/resultpage.html");
+                setBody(null);
+
+                StringBuilder content=new StringBuilder();
+
+                coffees.stream().filter(c->c.getRank()>=0).limit(3).forEach(c->content.append(
+                        "<div class=\"result\"><img class='productimage' src=\""+c.getImage()+"\">" +
+                                "<h2 class='imageCapture'>"+c.getName()+"</h2>" +
+                                "</div>\n"));
+
+                vars.put("%result", content.toString());
 
 
                 userlists.remove(requestData.getCookie("session"));

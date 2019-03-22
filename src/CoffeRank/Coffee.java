@@ -41,4 +41,23 @@ public class Coffee {
         return name+"\n\t"+rank;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

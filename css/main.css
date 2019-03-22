@@ -139,3 +139,58 @@ body{
     color: #8c8c8c;
     border: solid 10px white;
 }
+
+.endContainer{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 50px;
+    background-color: #003976;
+    color: #dbb96c;
+}
+
+.captueResult{
+    text-align: center;
+    font-size: 70px;
+    padding: 15px;
+    font-weight: bold;
+    margin-bottom: 5vw;
+}
+
+.resultCarussel{
+    width: 100vw;
+    height: 105vw;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.resultCarussel::-webkit-scrollbar{
+    display: none;
+}
+
+.result{
+    float: left;
+    width: 70vw;
+    height: 105vw;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    margin-left: 10vw;
+}
+
+.placeholder{
+    width: 5vh;
+}
+
+.productimage{
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.imageCapture{
+    font-weight: bolder;
+    font-size: 55px;
+    text-align: center;
+    padding: 3vw;
+}
