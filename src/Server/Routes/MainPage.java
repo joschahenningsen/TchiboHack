@@ -177,7 +177,7 @@ public class MainPage extends Route{
                                 "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeined\n" +
                                 "            </div>\n" +
-                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>"),
+                                "<div onclick='send(\"decaf\")' class='nextbtn'>Next</div>"),
                 new Question(
                         "Do you want your Coffee to be Fair Trade?",
                         new String[]{"yes", "no"},
@@ -188,7 +188,7 @@ public class MainPage extends Route{
                                 "               <img class=\"icon3\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
-                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>")
+                                "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>")
         };
         ArrayList<Coffee> coffees=null;
 
@@ -204,7 +204,7 @@ public class MainPage extends Route{
                 String id = ((Math.random() * 100000) + "").replaceAll("\\.", "");
                 setCookie("session", id);
                 coffees = new ArrayList<>();
-                remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9,10});
+                remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9});
                 ArrayList<Coffee> finalCoffees = coffees;
                 databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf,capsule Where '1'='1'").forEach(
                         row -> finalCoffees.add(

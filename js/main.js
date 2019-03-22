@@ -49,3 +49,31 @@ function selected(box) {
         $("#" + box).addClass("no");
     }
 }
+
+function send(id) {
+    if ($("#" + id).hasClass("yes")){
+        $.ajax({
+            type: "POST",
+            url: "/",
+            data: {answer:"yes"},
+            success: function (msg) {
+                title=msg.split("---")[0];
+                html=msg.split("---")[1];
+                $('.questionText').text(title);
+                $('.questionMain').html(html);
+            }
+        });
+    }else {
+        $.ajax({
+            type: "POST",
+            url: "/",
+            data: {answer:"no"},
+            success: function (msg) {
+                title=msg.split("---")[0];
+                html=msg.split("---")[1];
+                $('.questionText').text(title);
+                $('.questionMain').html(html);
+            }
+        });
+    }
+}
