@@ -104,6 +104,7 @@ body{
     height: 60vh;
     width: 90vw;
 }
+
 .coffeeIcon{
     display: block;
     margin-left: auto;
@@ -112,12 +113,17 @@ body{
 }
 
 .nextbtn {
+    margin: auto;
+    position: absolute;
+    left: 35vw;
+    bottom: -15%;
     text-align: center;
     color: white;
-    font-size: large;
+    padding: 20px;
+    font-size: 80px;
     vertical-align: center;
-    width: 300px;
+    width: 30vw;
     height: 150px;
-    border-radius: 50px;
+    border-radius: 75px;
     background-color: #dbb96c;
 }

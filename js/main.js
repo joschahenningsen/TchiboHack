@@ -20,4 +20,20 @@ function beanClicked(number) {
             $('#bean'+i).attr("src","img/beanOff.png");
         }
     }
+    $('#stength').val(number);
+}
+
+function sendStrength() {
+    alert();
+    $.ajax({
+        type: "POST",
+        url: "/",
+        data: {answer:$('#strength').val()},
+        success: function (msg) {
+            title=msg.split("---")[0];
+            html=msg.split("---")[1];
+            $('.questionText').text(title);
+            $('.questionMain').html(html);
+        }
+    });
 }
