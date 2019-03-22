@@ -37,3 +37,11 @@ function sendStrength() {
         }
     });
 }
+
+function selected(box) {
+    if ($("#"+box).val()==="no") {
+        ("#" + box).val("yes");
+    }else{
+        ("#" + box).val("no");
+    }
+}

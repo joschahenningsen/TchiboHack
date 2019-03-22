@@ -59,6 +59,10 @@ public class Question {
                 if (eval[finalAnswerindex][5]!=c.values[5])
                     c.rank=-1;
             }
+            if (eval[finalAnswerindex][6]!=-2){
+                if (eval[finalAnswerindex][6]!=c.values[6])
+                    c.rank-=1;
+            }
 
         });
     }

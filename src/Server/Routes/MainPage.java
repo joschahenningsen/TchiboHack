@@ -166,7 +166,29 @@ public class MainPage extends Route{
                                 "<div onclick=\"clicked('earthy');\" class=\"item3\">\n" +
                                 "                <img class=\"icon3\" src=\"img/earthy.png\">\n" +
                                 "                Earthy\n" +
-                                "            </div>")
+                                "            </div>"),
+                new Question(
+                        "Do you want your Coffee to be decaffeinated?",
+                        new String[]{"yes", "no"},
+                        new int[][]{{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"selected('decaf')\"class='item2' id='caffeined' value='no'> " +
+                                "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
+                                "                Decaffeined\n" +
+                                "            </div>\n" +
+                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>"),
+                new Question(
+                        "Do you want your Coffee to be Fair Trade?",
+                        new String[]{"yes", "no"},
+                        new int[][]{{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"clicked('fairtrade')\"class='item2' id='yes'> " +
+                                "               <img class=\"icon3\" src=\"img/fairtrade.png\">\n" +
+                                "                Fairtrade\n" +
+                                "            </div>\n" +
+                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>")
         };
         ArrayList<Coffee> coffees=null;
 
