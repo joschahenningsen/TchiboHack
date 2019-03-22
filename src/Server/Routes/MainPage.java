@@ -3,6 +3,7 @@ package Server.Routes;
 import CoffeRank.Coffee;
 import CoffeRank.Question;
 import Server.Database.Database;
+import Server.Exceptions.InvalidRequestException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +30,9 @@ public class MainPage extends Route{
     public void setupPage() {
         Question[] questions = {new Question(
                 "Which kind of coffee?",
-                new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
+                new String[]{"Beans", "Powder", "Capsules", "Pads", "Instant"},
                 new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{1,0,0,1},{1,0,0,1}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
+                new int[][]{{0, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
                 "            </div>\n" +
@@ -51,54 +52,29 @@ public class MainPage extends Route{
                 "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
                 "                Instant\n" +
                 "            </div>"),new Question(
-                "Which kind of coffee?",
+                "second question?",
                 new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
                 new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{1,0,0,1},{1,0,0,1}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/beans.png\">\n" +
-                "                Beans\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('powder');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/powder.png\">\n" +
-                "                Powder\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('capsules');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/capsules.png\">\n" +
-                "                Capsules\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('pads');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/pads.png\">\n" +
-                "                Pads\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('instant');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
-                "                Instant\n" +
-                "            </div>")
+                new int[][]{{1,0,0,1},{1,0,0,1}}, "Number two!")
         };
-        ArrayList<Coffee> coffees;
+        ArrayList<Coffee> coffees=null;
 
         if (requestData.POST("answer")==null) {
             setTemplateFile("html/index.html");
             vars.put("%title", "Tchibo | Coffe For Everyone!");
             if (requestData.hasCookie("session") && userlists.containsKey(requestData.getCookie("session"))) {
                 coffees = userlists.get(requestData.getCookie("session"));
-                int qnum = Integer.parseInt(requestData.getCookie("question"));
-
+                int qnum = remainingQuestions.get(requestData.getCookie("session"))[0];
                 vars.put("%questiontitle", questions[qnum].getQuestionStr());
                 vars.put("%options", questions[qnum].getHtml());
             } else {
                 String id = ((Math.random() * 100000) + "").replaceAll("\\.", "");
                 setCookie("session", id);
-                setCookie("question", "0");
-                String questionsStr="0";
-                for (int i = 1; i < 20; i++) {
-                    questionsStr+="a"+i;
-                }
-                System.out.println("Insert id,questions Values '"+id+"','"+questionsStr+"'");
-                databases.get(1).query("Insert id,questions Values '"+id+"','"+questionsStr+"'");
                 coffees = new ArrayList<>();
+                remainingQuestions.put(id, new int[]{0,1,2,3,4,5,6,7,8,9,10});
+                ArrayList<Coffee> finalCoffees = coffees;
                 databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
-                        row -> coffees.add(
+                        row -> finalCoffees.add(
                                 new Coffee(row[0], row[1], row[2], row[3], row[4], row[5],
                                         Integer.parseInt(row[6]),
                                         Integer.parseInt(row[7]),
@@ -111,9 +87,12 @@ public class MainPage extends Route{
                 vars.put("%options", questions[0].getHtml());
             }
         }else {
+            int currentQuestion = remainingQuestions.get(requestData.getCookie("session"))[0];
+            String answer = requestData.POST("answer");
+            String ssid = requestData.getCookie("session");
 
-            setCookie("question", Integer.parseInt(requestData.getCookie("question")+1)+"");
-            setBody(questions[Integer.parseInt(requestData.getCookie("question"))].getHtml());
+            coffees = userlists.get(ssid);
+            questions[currentQuestion].evaluate(coffees, answer);
         }
     }
 }

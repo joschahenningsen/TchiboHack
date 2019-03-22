@@ -25,6 +25,7 @@ public abstract class Route {
     private String contentType;
     private HashMap<String, String> cookies;
     protected HashMap<String, ArrayList<Coffee>> userlists;
+    protected HashMap<String, int[]> remainingQuestions;
 
     /**
      * Sets the route to be a page that gets request for sub urls
@@ -147,5 +148,9 @@ public abstract class Route {
 
     public void setUserlists(HashMap<String, ArrayList<Coffee>> userlists){
         this.userlists = userlists;
+    }
+
+    public void setRemainingQuestions(HashMap<String, int[]> remainingQuestions){
+        this.remainingQuestions = remainingQuestions;
     }
 }

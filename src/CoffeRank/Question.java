@@ -25,7 +25,7 @@ public class Question {
     public void evaluate(ArrayList<Coffee> coffees, String answer){
         int answerindex = 0;
         for (int i = 0; i < answers.length; i++) {
-            if (answers[i].equals(answer))
+            if (answers[i].toUpperCase().equals(answer.toUpperCase()))
                 answerindex=i;
         }
         int finalAnswerindex = answerindex;
