@@ -62,6 +62,7 @@ body{
     color: #8c8c8c;
     padding: 6rem;
     border: 5px solid white;
+    border-radius: 5px;
 }
 .item3{
     height: 30.5vw;
@@ -126,4 +127,16 @@ body{
     height: 150px;
     border-radius: 75px;
     background-color: #dbb96c;
+}
+
+.yes{
+    border: solid 10px white;
+    border-left: solid 10px #dbb96c;
+    color: #dbb96c;
+}
+
+.no{
+    border: solid 10px white;
+    color: #8c8c8c;
+    border: solid 10px white;
 }

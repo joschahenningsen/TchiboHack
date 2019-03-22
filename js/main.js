@@ -39,9 +39,13 @@ function sendStrength() {
 }
 
 function selected(box) {
-    if ($("#"+box).val()==="no") {
-        ("#" + box).val("yes");
+    if ($("#" + box).hasClass("no")) {
+        $("#" + box).removeClass("no");
+        $("#" + box).val("yes");
+        $("#" + box).addClass("yes");
     }else{
-        ("#" + box).val("no");
+        $("#" + box).removeClass("yes");
+        $("#" + box).val("no");
+        $("#" + box).addClass("no");
     }
 }

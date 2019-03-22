@@ -173,7 +173,7 @@ public class MainPage extends Route{
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"selected('decaf')\"class='item2' id='caffeined' value='no'> " +
+                                "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
                                 "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeined\n" +
                                 "            </div>\n" +
@@ -184,7 +184,7 @@ public class MainPage extends Route{
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"clicked('fairtrade')\"class='item2' id='yes'> " +
+                                "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
                                 "               <img class=\"icon3\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
