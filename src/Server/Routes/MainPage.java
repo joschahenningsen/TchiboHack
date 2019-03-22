@@ -7,6 +7,7 @@ import Server.Exceptions.InvalidRequestException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -182,7 +183,7 @@ public class MainPage extends Route{
                         "Do you want your Coffee to be Fair Trade?",
                         new String[]{"yes", "no"},
                         new int[][]{{},{}},
-                        new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                        new int[][]{{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 0, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
                                 "               <img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
@@ -192,14 +193,14 @@ public class MainPage extends Route{
                 new Question(
                         "Would you like any extras?",
                         new String[]{"decaf", "fairtrade", "decaffairtrade", ""},
-                        new int[][]{{},{}},
-                        new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                        new int[][]{{},{},{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 1, 1, -2},{-2, -2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
                                 "<img class=\"icon3\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeinated\n" +
                                 "            </div>"+
-                                "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\"" +
+                                "<div onclick=\"selected('fairtrade')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\">" +
                                         "<img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>"+
@@ -267,12 +268,23 @@ public class MainPage extends Route{
             }
             remainingQuestions.put(ssid, newremaining);
 
-            coffees.forEach(coffee -> System.out.println(coffee.getRank()));
-
-            if (questions.length>0)
+            if (newremaining.length>1)
                 setBody(questions[newremaining[0]].getQuestionStr()+"---"+questions[newremaining[0]].getHtml());
             else{
-                setBody("result---result");
+                Collections.sort(coffees, (c1, c2)->{
+                    if(c1.getRank()>c2.getRank())
+                        return -1;
+                    if(c1.getRank()<c2.getRank())
+                        return 1;
+                    return 0;
+                });
+
+                coffees.forEach(c->System.out.println(c));
+
+                setTemplateFile("resultpage.html");
+
+
+                userlists.remove(requestData.getCookie("session"));
             }
         }
     }

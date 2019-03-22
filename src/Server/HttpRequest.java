@@ -1,6 +1,8 @@
 package Server;
 
 import Server.Exceptions.InvalidRequestException;
+
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -117,9 +119,11 @@ public class HttpRequest {
     String[] params = body.split("&");
     for (String param : params) {
       String[] paramValue = param.split("=");
-      if (paramValue.length != 2)
-        throw new InvalidRequestException();
+      if (paramValue.length != 2) {
+        POST.put(paramValue[0], "");
+      }else {
       POST.put(paramValue[0], paramValue[1]);
+      }
     }
   }
 

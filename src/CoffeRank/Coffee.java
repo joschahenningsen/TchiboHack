@@ -38,7 +38,7 @@ public class Coffee {
     }
 
     public String toString(){
-        return values[0]+";"+rank;
+        return name+"\n\t"+rank;
     }
 
 }
