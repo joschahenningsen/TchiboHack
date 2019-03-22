@@ -11,3 +11,7 @@ function clicked(clicked) {
         }
     });
 }
+
+function beanClicked(number) {
+
+}

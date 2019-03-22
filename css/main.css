@@ -1,3 +1,7 @@
+body{
+    font-family: 'Overpass', sans-serif;
+}
+
 .defaultContainer{
     background-color: #eeeeee;
     width: 100%;
@@ -74,9 +78,35 @@
 }
 
 .icon{
-    width: 50%;
+    width: 40%;
 }
 
 .icon2{
     width: 10%;
+}
+.bean{
+    width: 100%;
+}
+.beanContainer{
+    width: 100%;
+    padding: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: white;
+    display: grid;
+    grid-column-gap: 5.71%;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.beanmaincontainer{
+    background-color: white;
+    padding-top: 20%;
+    height: 60vh;
+    width: 90vw;
+}
+.coffeeIcon{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40vw;
 }

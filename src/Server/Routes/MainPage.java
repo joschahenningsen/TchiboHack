@@ -54,7 +54,7 @@ public class MainPage extends Route{
                 "            </div>"),new Question(
                 "Which machine do you use?",
                 new String[]{"Dolce Gusto", "Nespresso", "Cafissimo", "QBO"},
-                new int[][]{},
+                new int[][]{{},{},{},{}},
                 new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 2},{-2, -2, -2, -2, -2, -2, 3},{-2, -2, -2, -2, -2, -2, 4},},
                 "            <div onclick=\"clicked('dg')\"class='item'> " +
                         "               <img class=\"icon\" src=\"img/capsule.png\">\n" +
@@ -89,7 +89,7 @@ public class MainPage extends Route{
                 new Question(
                         "Which Coffee do you prefer?",
                         new String[]{"Espresso", "Americano", "Crema", "Filtercoffee"},
-                        new int[][]{},
+                        new int[][]{{},{},{},{}},
                         new int[][]{{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 0, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('espresso')\"class='item3'> " +
@@ -111,7 +111,7 @@ public class MainPage extends Route{
                 new Question(
                         "Which Coffee do you prefer?",
                         new String[]{"milkcoffee", "Late", "Cappuccino"},
-                        new int[][]{},
+                        new int[][]{{},{},{}},
                         new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('milkcoffee')\"class='item3'> " +
@@ -125,7 +125,24 @@ public class MainPage extends Route{
                                 "<div onclick=\"clicked('cappuccino');\" class=\"item3\">\n" +
                                 "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
                                 "                Cappuccino\n" +
-                                "            </div>")
+                                "            </div>"),
+                new Question(
+                        "How strong do you like your coffee?",
+                        new String[]{"1", "2", "3", "4", "5", "6"},
+                        new int[][]{{},{},{},{},{},{}},
+                        new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
+                                        "<div class='beanmaincontainer'>" +
+                                        "<img src='img/coffeIcon.png' class='coffeeIcon'>" +
+                                                "<div class='beanContainer'>" +
+                                                    "<img onclick='beanClicked(1)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img onclick='beanClicked(2)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img onclick='beanClicked(3)' class='bean' src='img/beanOn.png'>" +
+                                                    "<img onclick='beanClicked(4)' class='bean' src='img/beanOff.png'>" +
+                                                    "<img onclick='beanClicked(5)' class='bean' src='img/beanOff.png'>" +
+                                                    "<img onclick='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
+                                "" +
+                                "</div>" +
+                                "</div>")
         };
         ArrayList<Coffee> coffees=null;
 
@@ -169,8 +186,12 @@ public class MainPage extends Route{
             int[] removeanswers=questions[currentQuestion].getExclusion();
             int remove = 0;
             for (int i = 0; i < remainingQs.length; i++) {
+                if (remainingQs[i]==currentQuestion){
+                    remove++;
+                    remainingQs[i]=-1;
+                }
                 for (int j = 0; j < removeanswers.length; j++) {
-                    if (remainingQs[i]==removeanswers[j]||(j==0&&i==0)){
+                    if (remainingQs[i]==removeanswers[j]){
                         remove++;
                         remainingQs[i]=-1;
                     }
