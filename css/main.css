@@ -47,10 +47,36 @@
     padding: 4rem;
     border: 5px solid white;
 }
+
+
+.item2{
+    height: 42.5vw;
+    width: 90vw;
+    background-color: white;
+    text-align: center;
+    font-size: 4em;
+    color: #8c8c8c;
+    padding: 6rem;
+    border: 5px solid white;
+}
+.item3{
+    height: 30.5vw;
+    width: 90vw;
+    background-color: white;
+    text-align: center;
+    font-size: 4em;
+    color: #8c8c8c;
+    padding: 4.5rem;
+    border: 5px solid white;
+}
 .item:hover{
     border: 5px solid grey;
 }
 
 .icon{
     width: 50%;
+}
+
+.icon2{
+    width: 10%;
 }

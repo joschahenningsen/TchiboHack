@@ -57,21 +57,75 @@ public class MainPage extends Route{
                 new int[][]{},
                 new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 2},{-2, -2, -2, -2, -2, -2, 3},{-2, -2, -2, -2, -2, -2, 4},},
                 "            <div onclick=\"clicked('dg')\"class='item'> " +
-                "               <img class=\"icon\" src=\"img/capsule.png\">\n" +
-                "                Dolce Gusto\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('nespresso');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
-                "                Nespresso\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('cafissimo');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
-                "                Cafissimo\n" +
-                "            </div>\n" +
-                "            <div onclick=\"clicked('qbo');\" class=\"item\">\n" +
-                "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
-                "                QBO\n" +
-                "            </div>")
+                        "               <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                Dolce Gusto\n" +
+                        "            </div>\n" +
+                        "            <div onclick=\"clicked('nespresso');\" class=\"item\">\n" +
+                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                Nespresso\n" +
+                        "            </div>\n" +
+                        "            <div onclick=\"clicked('cafissimo');\" class=\"item\">\n" +
+                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                Cafissimo\n" +
+                        "            </div>\n" +
+                        "            <div onclick=\"clicked('qbo');\" class=\"item\">\n" +
+                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                QBO\n" +
+                        "            </div>"),
+                new Question(
+                        "How do you drink your Coffee?",
+                        new String[]{"Black", "With milk"},
+                        new int[][]{{4},{3}},
+                        new int[][]{{-2, -2, -2, -2, -2, -2, -2},{-2, -2, -2, -2, -2, -2, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"clicked('black')\"class='item2'> " +
+                                "               <img class=\"icon\" src=\"img/black.png\">\n" +
+                                "                Black\n" +
+                                "            </div>\n" +
+                                "            <div onclick=\"clicked('milk');\" class=\"item2\">\n" +
+                                "                <img class=\"icon\" src=\"img/milk.png\">\n" +
+                                "                With milk\n" +
+                                "            </div>"),
+                new Question(
+                        "Which Coffee do you prefer?",
+                        new String[]{"Espresso", "Americano", "Crema", "Filtercoffee"},
+                        new int[][]{},
+                        new int[][]{{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 0, -2, -2, -2, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"clicked('espresso')\"class='item3'> " +
+                                "               <img class=\"icon3\" src=\"img/espresso.png\">\n" +
+                                "                Espresso\n" +
+                                "            </div>\n" +
+                                "<div onclick=\"clicked('americano');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/americano.png\">\n" +
+                                "                Americano\n" +
+                                "            </div>" +
+                                "<div onclick=\"clicked('crema');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/americano.png\">\n" +
+                                "                Cafe Crema\n" +
+                                "            </div>" +
+                                "<div onclick=\"clicked('filtercoffee');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/filter.png\">\n" +
+                                "                Filtercoffee\n" +
+                                "            </div>"),
+                new Question(
+                        "Which Coffee do you prefer?",
+                        new String[]{"milkcoffee", "Late", "Cappuccino"},
+                        new int[][]{},
+                        new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"clicked('milkcoffee')\"class='item3'> " +
+                                "               <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                Café au Lait\n" +
+                                "            </div>\n" +
+                                "<div onclick=\"clicked('late');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                Late Macchiato\n" +
+                                "            </div>" +
+                                "<div onclick=\"clicked('cappuccino');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                Cappuccino\n" +
+                                "            </div>")
         };
         ArrayList<Coffee> coffees=null;
 
