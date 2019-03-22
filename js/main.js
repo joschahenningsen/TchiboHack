@@ -24,11 +24,11 @@ function beanClicked(number) {
 }
 
 function sendStrength() {
-    alert();
+    answerval=$('#strength').val();
     $.ajax({
         type: "POST",
         url: "/",
-        data: {answer:$('#strength').val()},
+        data: {answer:answerval},
         success: function (msg) {
             title=msg.split("---")[0];
             html=msg.split("---")[1];
@@ -36,4 +36,16 @@ function sendStrength() {
             $('.questionMain').html(html);
         }
     });
+}
+
+function selected(box) {
+    if ($("#" + box).hasClass("no")) {
+        $("#" + box).removeClass("no");
+        $("#" + box).val("yes");
+        $("#" + box).addClass("yes");
+    }else{
+        $("#" + box).removeClass("yes");
+        $("#" + box).val("no");
+        $("#" + box).addClass("no");
+    }
 }

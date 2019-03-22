@@ -142,26 +142,53 @@ public class MainPage extends Route{
                                                     "<img id='bean6' onmouseover='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
                                 "" +
                                 "</div>" +
-                                                "<div class='nextbtn'>Next</div>"+
-                                "</div>"),
+                                "</div>"+
+                                                "<input id='strength' type='hidden' value='3'>"+
+                        "<div onclick='sendStrength()' class='nextbtn'>Next</div>"),
                 new Question(
+
                         "Which flavor do you prefer?",
+
                         new String[]{"fruity", "nutty", "earthy"},
+
                         new int[][]{{},{},{}},
+
                         new int[][]{{-2, 1, -2, -2, -2, -2, -2},{-2, 0, -2, -2, -2, -2, -2},{-2, 2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('fruity')\"class='item3'> " +
-                                "               <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "               <img class=\"icon3\" src=\"img/fruity.png\">\n" +
                                 "                Fruity\n" +
                                 "            </div>\n" +
                                 "<div onclick=\"clicked('nutty');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                <img class=\"icon3\" src=\"img/nutty.png\">\n" +
                                 "                Nutty\n" +
                                 "            </div>" +
                                 "<div onclick=\"clicked('earthy');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                <img class=\"icon3\" src=\"img/earthy.png\">\n" +
                                 "                Earthy\n" +
                                 "            </div>"),
+                new Question(
+                        "Do you want your Coffee to be decaffeinated?",
+                        new String[]{"yes", "no"},
+                        new int[][]{{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
+                                "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
+                                "                Decaffeined\n" +
+                                "            </div>\n" +
+                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>"),
+                new Question(
+                        "Do you want your Coffee to be Fair Trade?",
+                        new String[]{"yes", "no"},
+                        new int[][]{{},{}},
+                        new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 0}},
+                        "<style>.questionMain {grid-template-columns: auto;}</style>" +
+                                "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
+                                "               <img class=\"icon3\" src=\"img/fairtrade.png\">\n" +
+                                "                Fairtrade\n" +
+                                "            </div>\n" +
+                                "<div onclick='sendCaffined()' class='nextbtn'>Next</div>")
         };
         ArrayList<Coffee> coffees=null;
 
