@@ -1,5 +1,6 @@
 package Server;
 
+import CoffeRank.Coffee;
 import Server.Database.Database;
 import Server.Exceptions.InvalidRequestException;
 import Server.Routes.MainPage;
@@ -10,6 +11,7 @@ import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -28,13 +30,16 @@ public class WebserverThread extends Thread {
    * Called by the Main method each time a user connects.
    * Make sure to include every Route in this method you want to be publicly available
    * @param client
+   * @param userlists
    */
-  public WebserverThread(Socket client, Logger logger) {
+  public WebserverThread(Socket client, Logger logger, HashMap<String, ArrayList<Coffee>> userlists) {
     this.client = client;
     routes=new ArrayList<>();
     databases = new ArrayList<>();
     //important:
-    routes.add(new MainPage());
+    MainPage mainPage=new MainPage();
+    mainPage.setUserlists(userlists);
+    routes.add(mainPage);
     databases.add(new Database("Sessions", "id;state", 10));
     this.logger = logger;
     dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

@@ -1,5 +1,6 @@
 package Server.Routes;
 
+import CoffeRank.Coffee;
 import Server.*;
 import Server.Database.Database;
 
@@ -23,6 +24,7 @@ public abstract class Route {
     private boolean acceptsSubPages=false;
     private String contentType;
     private HashMap<String, String> cookies;
+    protected HashMap<String, ArrayList<Coffee>> userlists;
 
     /**
      * Sets the route to be a page that gets request for sub urls
@@ -141,5 +143,9 @@ public abstract class Route {
         if (cookies==null)
             cookies = new HashMap<>();
         cookies.put(key, value);
+    }
+
+    public void setUserlists(HashMap<String, ArrayList<Coffee>> userlists){
+        this.userlists = userlists;
     }
 }

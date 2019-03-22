@@ -1,9 +1,12 @@
 package Server.Routes;
 
+import CoffeRank.Coffee;
+import CoffeRank.Question;
 import Server.Database.Database;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Sample Route, inspire yourself
@@ -24,7 +27,12 @@ public class MainPage extends Route{
      */
     @Override
     public void setupPage() {
-        String[][] question = {new String[]{"Beans","Powder", "Pads", "Capsules"}};
+        Question[] questions = {new Question(
+                "Which kind of coffee?",
+                new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
+                new int[][]{}
+                )
+        };
         setTemplateFile("html/index.html");
 
         vars.put("%title", "It Works!");
@@ -37,18 +45,15 @@ public class MainPage extends Route{
         vars.put("%page0active", "active");
         String content = "";
 
-        Database questions = databases.get(0);
-        if (requestData.hasCookie("session")){
-            ArrayList<String[]> res = questions.query("Select state Where id='"+requestData.getCookie("session")+"'");
-            if (res.size()!=0){
-                int status = Integer.parseInt(res.get(0)[0]);
-                content+=Arrays.toString(question[status]);
-            }
+        if (requestData.hasCookie("session")&&userlists.containsKey(requestData.getCookie("session"))){
+            ArrayList<Coffee>coffees=userlists.get(requestData.getCookie("session"));
         }else {
-            content += "jetzt starten!";
             String id = (Math.random()*100000)+"";
             setCookie("session", id);
-            questions.query("Insert '"+id+"', 0");
+
+            ArrayList<Coffee> coffees = new ArrayList<>();
+            coffees.add(new Coffee());
+            userlists.put(id, coffees);
         }
 
 

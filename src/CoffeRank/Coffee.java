@@ -1,6 +1,6 @@
 package CoffeRank;
 
-public abstract class Coffee {
+public class Coffee {
     double rank;
     int id;
     String name;
