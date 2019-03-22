@@ -31,25 +31,40 @@ public class MainPage extends Route{
                 "Which kind of coffee?",
                 new String[]{"Pads", "Beans", "Powder", "Capsules", "Instant"},
                 new int[][]{{1,2},{3,4},{5,6},{7,8},{9,10}},
-                new int[][]{{1,0,0,1},{1,0,0,1}})
+                new int[][]{{1,0,0,1},{1,0,0,1}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/beans.png\">\n" +
+                "                Beans\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('powder');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/powder.png\">\n" +
+                "                Powder\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('capsules');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/capsules.png\">\n" +
+                "                Capsules\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('pads');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/pads.png\">\n" +
+                "                Pads\n" +
+                "            </div>\n" +
+                "            <div onclick=\"clicked('instant');\" class=\"item\">\n" +
+                "                <img class=\"icon\" src=\"img/Instant.png\">\n" +
+                "                Instant\n" +
+                "            </div>")
         };
         setTemplateFile("html/index.html");
 
-        vars.put("%title", "It Works!");
-        vars.put("%page0", "It Works!");
-        vars.put("%page0link", "/");
-        vars.put("%page1link", "get-started");
-        vars.put("%page1", "Get started");
-        vars.put("%page2link", "https://github.com/joschahenningsen/Erie-Webserver");
-        vars.put("%page2", "About");
-        vars.put("%page0active", "active");
-        String content = "";
 
         if (requestData.hasCookie("session")&&userlists.containsKey(requestData.getCookie("session"))){
             ArrayList<Coffee>coffees=userlists.get(requestData.getCookie("session"));
+            int qnum=Integer.parseInt(requestData.getCookie("question"));
+
+            vars.put("%questiontitle", questions[qnum].getQuestionStr());
+            vars.put("%options", questions[qnum].getHtml());
         }else {
             String id = (Math.random()*100000)+"";
             setCookie("session", id);
+            setCookie("question", "0");
             ArrayList<Coffee> coffees = new ArrayList<>();
             databases.get(0).query("Select id,name,url,price,image,description,type,aroma,espresso,strength,fairtrade,decaf Where '1'='1'").forEach(
                     row->coffees.add(
@@ -61,9 +76,10 @@ public class MainPage extends Route{
                                     Integer.parseInt(row[10]),
                                     Integer.parseInt(row[11]))));
             userlists.put(id, coffees);
+            vars.put("%questiontitle", questions[0].getQuestionStr());
+            vars.put("%options", questions[0].getHtml());
+
+
         }
-
-
-        vars.put("%content", content);
     }
 }
