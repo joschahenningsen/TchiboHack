@@ -25,6 +25,7 @@ body{
     .questionText {
         font-size: 75px;
         display: inline-block;
+        font-weight: bold;
     }
 }
 
@@ -42,11 +43,12 @@ body{
 }
 
 .item{
+    font-weight: bold;
     height: 42.5vw;
     width: 42.5vw;
     background-color: white;
     text-align: center;
-    font-size: 4em;
+    font-size: 3.5em;
     color: #8c8c8c;
     padding: 4rem;
     border: 5px solid white;
@@ -55,22 +57,24 @@ body{
 
 
 .item2{
+    font-weight: bold;
     height: 42.5vw;
     width: 90vw;
     background-color: white;
     text-align: left;
-    font-size: 4em;
+    font-size: 3.5em;
     color: #8c8c8c;
     /*padding: 6rem;*/
     border: 5px solid white;
     border-radius: 5px;
 }
 .item3{
+    font-weight: bold;
     height: 30vw;
     width: 90vw;
     background-color: white;
     text-align: center;
-    font-size: 4em;
+    font-size: 3.5em;
     color: #8c8c8c;
     border: 5px solid white;
     border-radius: 5px;
@@ -259,8 +263,14 @@ body{
 .progress{
     text-align: center;
     background-color: rgba(0,0,0,0);
-    width: 60vw;
+    width: 40vw;
     height: auto;
     margin: auto;
-    margin-bottom: 15px;
+    margin-bottom: 45px;
 }
+/*
+    fix height
+    center text vertically
+
+*/
+

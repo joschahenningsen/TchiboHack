@@ -37,7 +37,7 @@ public class MainPage extends Route{
                 "<style>.questionHeader {\n" +
                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
                 "</style>" +
-                "<script>$('#progress').attr('src','img/p0.png');</script>" +
+                "<script>setImg(0);</script>" +
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
                 "            </div>\n" +
@@ -64,7 +64,7 @@ public class MainPage extends Route{
                 "<style>.questionHeader {\n" +
                         "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
                         "</style>" +
-                        "<script>$('#progress').attr('src','img/p1.png');</script>"+
+                        "<script>setImg(1);</script>"+
                         "            <div onclick=\"clicked('dg')\"class='item'> " +
                         "               <img class=\"icon\" src=\"img/dg.png\">\n" +
                         "                D. Gusto\n" +
@@ -89,7 +89,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p1.png');</script>"+
+                                "<script>setImg(2);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('black')\"class='item2'> " +
                                 "               <img class=\"iconbig\" src=\"img/black.png\">\n" +
@@ -107,7 +107,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg3.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p2.png');</script>"+
+                                "<script>setImg(2);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('espresso')\"class='item3'> " +
                                 "               <img class=\"icon3\" src=\"img/espresso.png\">\n" +
@@ -133,7 +133,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg3.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p2.png');</script>"+
+                                "<script>setImg(2);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('milkcoffee')\"class='item3'> " +
                                 "               <img class=\"icon3\" src=\"img/milkS.png\">\n" +
@@ -159,7 +159,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg4.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p3.png');</script>"+
+                                "<script>setImg(3);</script>"+
                                         "<div class='beanmaincontainer'>" +
                                         "<img src='img/coffeIcon.png' class='coffeeIcon'>" +
                                                 "<div class='beanContainer'>" +
@@ -185,7 +185,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg5.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p4.png');</script>"+
+                                "<script>setImg(4);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('fruity')\"class='item3'> " +
                                 "               <img class=\"icon3 mr\" src=\"img/fruity.png\">\n" +
@@ -207,7 +207,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p5.png');</script>"+
+                                "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
                                 "               <img class=\"iconbig\" src=\"img/decaf.png\">\n" +
@@ -222,7 +222,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p5.png');</script>"+
+                                "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
                                 "               <img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
@@ -237,7 +237,7 @@ public class MainPage extends Route{
                         "<style>.questionHeader {\n" +
                                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
                                 "</style>" +
-                                "<script>$('#progress').attr('src','img/p5.png');</script>"+
+                                "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
                                 "<img class=\"iconbig\" src=\"img/decaf.png\">\n" +

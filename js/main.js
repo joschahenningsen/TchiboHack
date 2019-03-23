@@ -91,3 +91,7 @@ function checkandsend() {
         }
     });
 }
+
+function setImg(num) {
+    $('#progress').attr('src','img/p'+num+'.png');
+}
