@@ -73,13 +73,18 @@ body{
     height: 30vw;
     width: 90vw;
     background-color: white;
-    text-align: center;
+    text-align: left;
     font-size: 3.5em;
     color: #8c8c8c;
     border: 5px solid white;
     border-radius: 5px;
     display: inline-block;
     margin: auto;
+    padding-left: 60px;
+}
+
+.lm{
+    padding-left: 20vw !important;
 }
 
 .icon{
@@ -274,3 +279,14 @@ body{
     center text vertically
 
 */
+
+
+.item:hover{
+    color: orange;
+}
+.item2:hover{
+    color: orange;
+}
+.item3:hover{
+    color: orange;
+}

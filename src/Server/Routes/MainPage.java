@@ -182,15 +182,15 @@ public class MainPage extends Route{
                                 "</style>" +
                                 "<script>setImg(4);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"clicked('fruity')\"class='item3'> " +
+                                "<div onclick=\"clicked('fruity')\"class='item3 lm'> " +
                                 "               <img class=\"icon3 mr\" src=\"img/fruity.png\">\n" +
                                 "                Fruity\n" +
                                 "            </div>\n" +
-                                "<div onclick=\"clicked('nutty');\" class=\"item3\">\n" +
+                                "<div onclick=\"clicked('nutty');\" class=\"item3 lm\">\n" +
                                 "                <img class=\"icon3 mr\" src=\"img/nutty.png\">\n" +
                                 "                Nutty\n" +
                                 "            </div>" +
-                                "<div onclick=\"clicked('earthy');\" class=\"item3\">\n" +
+                                "<div onclick=\"clicked('earthy');\" class=\"item3 lm\">\n" +
                                 "                <img class=\"icon3 mr\" src=\"img/earthy.png\">\n" +
                                 "                Earthy\n" +
                                 "            </div>"),
