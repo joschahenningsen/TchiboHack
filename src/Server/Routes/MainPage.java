@@ -32,11 +32,12 @@ public class MainPage extends Route{
         Question[] questions = {new Question(
                 "Which kind of coffee?",
                 new String[]{"Beans", "Powder", "Capsules", "Pads", "Instant"},
-                new int[][]{{1,7,8},{1,7,8},{8,9},{1,2,3,4,6,7,8,9},{1,2,3,4,5,6,8,9}},
+                new int[][]{{1,7,8},{1,7,8},{8,9},{1,2,3,4,6,8,9},{1,2,3,4,5,6,8,9}},
                 new int[][]{{0, -2, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
                 "<style>.questionHeader {\n" +
                 "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
                 "</style>" +
+                "<script></script>"+
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
                 "            </div>\n" +
