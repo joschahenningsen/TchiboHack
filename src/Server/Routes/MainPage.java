@@ -34,6 +34,9 @@ public class MainPage extends Route{
                 new String[]{"Beans", "Powder", "Capsules", "Pads", "Instant"},
                 new int[][]{{1,7,8},{1,7,8},{8,9},{1,2,3,4,6,7,8,9},{1,2,3,4,5,6,8,9}},
                 new int[][]{{0, -2, -2, -2, -2, -2, -2},{1, -2, -2, -2, -2, -2, -2},{2, -2, -2, -2, -2, -2, -2},{3, -2, -2, -2, -2, -2, -2},{4, -2, -2, -2, -2, -2, -2}}, "<div onclick=\"clicked('beans');\" class=\"item\">\n" +
+                "<style>.questionHeader {\n" +
+                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
+                "</style>" +
                 "                <img class=\"icon\" src=\"img/beans.png\">\n" +
                 "                Beans\n" +
                 "            </div>\n" +
@@ -54,23 +57,26 @@ public class MainPage extends Route{
                 "                Instant\n" +
                 "            </div>"),new Question(
                 "Which machine do you use?",
-                new String[]{"Dolce Gusto", "Nespresso", "Cafissimo", "QBO"},
+                new String[]{"dg", "Nespresso", "Cafissimo", "qbo"},
                 new int[][]{{},{},{},{}},
                 new int[][]{{-2, -2, -2, -2, -2, -2, 1},{-2, -2, -2, -2, -2, -2, 2},{-2, -2, -2, -2, -2, -2, 3},{-2, -2, -2, -2, -2, -2, 4},},
+                "<style>.questionHeader {\n" +
+                        "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg1.png\");" +
+                        "</style>" +
                 "            <div onclick=\"clicked('dg')\"class='item'> " +
-                        "               <img class=\"icon\" src=\"img/capsule.png\">\n" +
-                        "                Dolce Gusto\n" +
+                        "               <img class=\"icon\" src=\"img/dg.png\">\n" +
+                        "                D. Gusto\n" +
                         "            </div>\n" +
                         "            <div onclick=\"clicked('nespresso');\" class=\"item\">\n" +
-                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                <img class=\"icon\" src=\"img/np.png\">\n" +
                         "                Nespresso\n" +
                         "            </div>\n" +
                         "            <div onclick=\"clicked('cafissimo');\" class=\"item\">\n" +
-                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                <img class=\"icon\" src=\"img/cm.png\">\n" +
                         "                Cafissimo\n" +
                         "            </div>\n" +
                         "            <div onclick=\"clicked('qbo');\" class=\"item\">\n" +
-                        "                <img class=\"icon\" src=\"img/capsule.png\">\n" +
+                        "                <img class=\"icon\" src=\"img/qbo.png\">\n" +
                         "                QBO\n" +
                         "            </div>"),
                 new Question(
@@ -78,6 +84,9 @@ public class MainPage extends Route{
                         new String[]{"black", "milk"},
                         new int[][]{{4},{3}},
                         new int[][]{{-2, -2, -2, -2, -2, -2, -2},{-2, -2, -2, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg2.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('black')\"class='item2'> " +
                                 "               <img class=\"iconbig\" src=\"img/black.png\">\n" +
@@ -92,6 +101,9 @@ public class MainPage extends Route{
                         new String[]{"Espresso", "Americano", "Crema", "Filtercoffee"},
                         new int[][]{{},{},{},{}},
                         new int[][]{{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 0, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg3.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('espresso')\"class='item3'> " +
                                 "               <img class=\"icon3\" src=\"img/espresso.png\">\n" +
@@ -114,6 +126,9 @@ public class MainPage extends Route{
                         new String[]{"milkcoffee", "Latte", "Cappuccino", "Flat"},
                         new int[][]{{},{},{},{}},
                         new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg3.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('milkcoffee')\"class='item3'> " +
                                 "               <img class=\"icon3\" src=\"img/milkS.png\">\n" +
@@ -136,6 +151,9 @@ public class MainPage extends Route{
                         new String[]{"1", "2", "3", "4", "5", "6"},
                         new int[][]{{},{},{},{},{},{}},
                         new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg4.png\");" +
+                                "</style>" +
                                         "<div class='beanmaincontainer'>" +
                                         "<img src='img/coffeIcon.png' class='coffeeIcon'>" +
                                                 "<div class='beanContainer'>" +
@@ -145,7 +163,6 @@ public class MainPage extends Route{
                                                     "<img id='bean4' onmouseover='beanClicked(4)' class='bean' src='img/beanOff.png'>" +
                                                     "<img id='bean5' onmouseover='beanClicked(5)' class='bean' src='img/beanOff.png'>" +
                                                     "<img id='bean6' onmouseover='beanClicked(6)' class='bean' src='img/beanOff.png'>" +
-                                "" +
                                 "</div>" +
                                 "</div>"+
                                                 "<input id='strength' type='hidden' value='3'>"+
@@ -159,6 +176,9 @@ public class MainPage extends Route{
                         new int[][]{{},{},{}},
 
                         new int[][]{{-2, 1, -2, -2, -2, -2, -2},{-2, 0, -2, -2, -2, -2, -2},{-2, 2, -2, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg5.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('fruity')\"class='item3'> " +
                                 "               <img class=\"icon3 mr\" src=\"img/fruity.png\">\n" +
@@ -177,6 +197,9 @@ public class MainPage extends Route{
                         new String[]{"yes", "no"},
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
                                 "               <img class=\"iconbig\" src=\"img/decaf.png\">\n" +
@@ -188,6 +211,9 @@ public class MainPage extends Route{
                         new String[]{"yes", "no"},
                         new int[][]{{},{}},
                         new int[][]{{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 0, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
                                 "               <img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
@@ -199,6 +225,9 @@ public class MainPage extends Route{
                         new String[]{"decaf", "fairtrade", "decaffairtrade", ""},
                         new int[][]{{},{},{},{}},
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 1, 1, -2},{-2, -2, -2, -2, -2, -2, -2}},
+                        "<style>.questionHeader {\n" +
+                                "    background-image: linear-gradient(to bottom, #ffffff, rgba(0,0,0,0.5)),url(\"/img/bg6.png\");" +
+                                "</style>" +
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
                                 "<img class=\"iconbig\" src=\"img/decaf.png\">\n" +
