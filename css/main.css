@@ -58,27 +58,37 @@ body{
     height: 42.5vw;
     width: 90vw;
     background-color: white;
-    text-align: center;
+    text-align: left;
     font-size: 4em;
     color: #8c8c8c;
-    padding: 6rem;
+    /*padding: 6rem;*/
     border: 5px solid white;
     border-radius: 5px;
 }
 .item3{
-    height: 30.5vw;
+    height: 30vw;
     width: 90vw;
     background-color: white;
     text-align: center;
     font-size: 4em;
     color: #8c8c8c;
-    padding: 4.5rem;
     border: 5px solid white;
     border-radius: 5px;
+    display: inline-block;
+    margin: auto;
 }
 
 .icon{
-    width: 40%;
+    width: 75%;
+}
+
+.iconbig{
+    margin: 8.75vw;
+    height: 25vw;
+}
+.icon3{
+    height: 20vw;
+    margin-top: 5vw;
 }
 
 .icon2{
@@ -100,8 +110,8 @@ body{
 
 .beanmaincontainer{
     background-color: white;
-    padding-top: 20%;
-    height: 60vh;
+    padding-top: 10%;
+    height: 90vw;
     width: 90vw;
 }
 
@@ -109,6 +119,7 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 7%;
     width: 40vw;
 }
 
@@ -116,14 +127,14 @@ body{
     margin: auto;
     position: absolute;
     left: 35vw;
-    bottom: -25%;
+    bottom: -15vw;
     text-align: center;
     color: white;
     padding: 20px;
     font-size: 80px;
     vertical-align: center;
     width: 30vw;
-    height: 150px;
+    height: 15vw;
     border-radius: 75px;
     background-color: #dbb96c;
 }
@@ -193,4 +204,55 @@ body{
     font-size: 55px;
     text-align: center;
     padding: 3vw;
+}
+.description{
+    font-size: 45px;
+    height: 105px;
+    overflow: hidden;
+    text-align: center;
+    color: black;
+}
+
+.price{
+    display: inline-block;
+    position: relative;
+    bottom: -10px;
+    right: -50vw;
+    font-size: 50px;
+    color: black;
+    text-align: right;
+}
+
+.freeSample{
+    margin: auto;
+    margin-top: 15vw;
+    padding: 20px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    width: 90vw;
+    border-radius: 5px;
+    background-color: #002967;
+    color: #dbb96c;
+}
+
+.finder{
+    padding: 20px;
+    margin: auto;
+    margin-top: 10vw;
+    text-align: center;
+    color: white;
+    font-size: 55px;
+}
+
+.fas{
+    margin-left: 5px;
+}
+
+.mr{
+    margin-right: 50px;
+}
+
+.left{
+    text-align: left;
 }

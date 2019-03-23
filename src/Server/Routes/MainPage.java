@@ -80,11 +80,11 @@ public class MainPage extends Route{
                         new int[][]{{-2, -2, -2, -2, -2, -2, -2},{-2, -2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('black')\"class='item2'> " +
-                                "               <img class=\"icon\" src=\"img/black.png\">\n" +
+                                "               <img class=\"iconbig\" src=\"img/black.png\">\n" +
                                 "                Black\n" +
                                 "            </div>\n" +
                                 "            <div onclick=\"clicked('milk');\" class=\"item2\">\n" +
-                                "                <img class=\"icon\" src=\"img/milk.png\">\n" +
+                                "                <img class=\"iconbig\" src=\"img/milk.png\">\n" +
                                 "                With milk\n" +
                                 "            </div>"),
                 new Question(
@@ -111,21 +111,25 @@ public class MainPage extends Route{
                                 "            </div>"),
                 new Question(
                         "Which Coffee do you prefer?",
-                        new String[]{"milkcoffee", "Late", "Cappuccino"},
-                        new int[][]{{},{},{}},
-                        new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
+                        new String[]{"milkcoffee", "Latte", "Cappuccino", "Flat"},
+                        new int[][]{{},{},{},{}},
+                        new int[][]{{-2, -2, 0, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2},{-2, -2, 1, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('milkcoffee')\"class='item3'> " +
-                                "               <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "               <img class=\"icon3\" src=\"img/milkS.png\">\n" +
                                 "                Café au Lait\n" +
                                 "            </div>\n" +
-                                "<div onclick=\"clicked('late');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
-                                "                Late Macchiato\n" +
+                                "<div onclick=\"clicked('latte');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/latte.png\">\n" +
+                                "                Latte Macchiato\n" +
                                 "            </div>" +
                                 "<div onclick=\"clicked('cappuccino');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/milk.png\">\n" +
+                                "                <img class=\"icon3\" src=\"img/milkS.png\">\n" +
                                 "                Cappuccino\n" +
+                                "            </div>" +
+                                "<div onclick=\"clicked('flat');\" class=\"item3\">\n" +
+                                "                <img class=\"icon3\" src=\"img/flat.png\">\n" +
+                                "                Flat White\n" +
                                 "            </div>"),
                 new Question(
                         "How strong do you like your coffee?",
@@ -157,15 +161,15 @@ public class MainPage extends Route{
                         new int[][]{{-2, 1, -2, -2, -2, -2, -2},{-2, 0, -2, -2, -2, -2, -2},{-2, 2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"clicked('fruity')\"class='item3'> " +
-                                "               <img class=\"icon3\" src=\"img/fruity.png\">\n" +
+                                "               <img class=\"icon3 mr\" src=\"img/fruity.png\">\n" +
                                 "                Fruity\n" +
                                 "            </div>\n" +
                                 "<div onclick=\"clicked('nutty');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/nutty.png\">\n" +
+                                "                <img class=\"icon3 mr\" src=\"img/nutty.png\">\n" +
                                 "                Nutty\n" +
                                 "            </div>" +
                                 "<div onclick=\"clicked('earthy');\" class=\"item3\">\n" +
-                                "                <img class=\"icon3\" src=\"img/earthy.png\">\n" +
+                                "                <img class=\"icon3 mr\" src=\"img/earthy.png\">\n" +
                                 "                Earthy\n" +
                                 "            </div>"),
                 new Question(
@@ -175,7 +179,7 @@ public class MainPage extends Route{
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, -2, 0, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
-                                "               <img class=\"icon3\" src=\"img/decaf.png\">\n" +
+                                "               <img class=\"iconbig\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeinated\n" +
                                 "            </div>\n" +
                                 "<div onclick='send(\"decaf\")' class='nextbtn'>Next</div>"),
@@ -186,7 +190,7 @@ public class MainPage extends Route{
                         new int[][]{{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 0, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
-                                "               <img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
+                                "               <img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
                                 "<div onclick='send(\"fairtrade\")' class='nextbtn'>Next</div>"),
@@ -197,11 +201,11 @@ public class MainPage extends Route{
                         new int[][]{{-2, -2, -2, -2, -2, 1, -2},{-2, -2, -2, -2, 1, -2, -2},{-2, -2, -2, -2, 1, 1, -2},{-2, -2, -2, -2, -2, -2, -2}},
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
                                 "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
-                                "<img class=\"icon3\" src=\"img/decaf.png\">\n" +
+                                "<img class=\"iconbig\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeinated\n" +
                                 "            </div>"+
                                 "<div onclick=\"selected('fairtrade')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\">" +
-                                        "<img class=\"icon3\" src=\"img/fairtrade.jpg\">\n" +
+                                        "<img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>"+
                                 "<div onclick='checkandsend()' class='nextbtn'>Next</div>"
@@ -287,11 +291,16 @@ public class MainPage extends Route{
                 StringBuilder content=new StringBuilder();
 
                 coffees.stream().filter(c->c.getRank()>=0).limit(3).forEach(c->content.append(
-                        "<div class=\"result\"><img class='productimage' src=\""+c.getImage()+"\">" +
+                        "<a href='"+c.getUrl()+"'><div class=\"result\"><img class='productimage' src=\""+c.getImage()+"\">" +
                                 "<h2 class='imageCapture'>"+c.getName()+"</h2>" +
-                                "</div>\n"));
-
+                                "<h4 class='description'>"+c.getDescription()+"</h4>" +
+                                "<h3 class='price'>"+c.getPrice()+" €</h3>" +
+                                "</div></a>\n"));
+                StringBuilder buttons=new StringBuilder();
+                buttons.append("<div class='freeSample'>Get your free samples</div>");
+                buttons.append("<a href='https://www.tchibo.de/filialfinder'><div class='finder'>Try in the store <i class=\"fas fa-map-marker-alt\"></i></div></a>");
                 vars.put("%result", content.toString());
+                vars.put("%buttons", buttons.toString());
 
 
                 userlists.remove(requestData.getCookie("session"));

@@ -27,7 +27,8 @@ public class Config {
                 "<link href=\"https://fonts.googleapis.com/css?family=Overpass\" rel=\"stylesheet\"> " +
                 "    <script src=\"js/main.js\"></script>\n" +
                 "    <meta charset=\"UTF-8\">\n" +
-                "    <link rel=\"stylesheet\" href=\"css/main.css\">");
+                "    <link rel=\"stylesheet\" href=\"css/main.css\">" +
+                "<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.8.1/css/all.css\" integrity=\"sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf\" crossorigin=\"anonymous\">");
 
         //file for error and acces logs
         logfile="logs.txt";
