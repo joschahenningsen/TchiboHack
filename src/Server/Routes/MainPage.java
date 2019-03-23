@@ -2,13 +2,8 @@ package Server.Routes;
 
 import CoffeRank.Coffee;
 import CoffeRank.Question;
-import Server.Database.Database;
-import Server.Exceptions.InvalidRequestException;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 
 /**
  * Sample Route, inspire yourself
