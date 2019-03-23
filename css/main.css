@@ -211,14 +211,16 @@ body{
 .imageCapture{
     font-weight: bolder;
     font-size: 55px;
-    text-align: center;
+    text-align: left;
     padding: 3vw;
 }
 .description{
+    padding: 3vw;
+    padding-top: 0px;
     font-size: 45px;
-    height: 105px;
+    height: 115px;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
     color: black;
 }
 
@@ -282,11 +284,15 @@ body{
 
 
 .item:hover{
-    color: orange;
+    color: #dbb96c;;
 }
 .item2:hover{
-    color: orange;
+    color: #dbb96c;;
 }
 .item3:hover{
-    color: orange;
+    color: #dbb96c;
+}
+
+remcolor:hover{
+    color:white;
 }

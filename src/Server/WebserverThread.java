@@ -3,8 +3,10 @@ package Server;
 import CoffeRank.Coffee;
 import Server.Database.Database;
 import Server.Exceptions.InvalidRequestException;
+import Server.Routes.Checkout;
 import Server.Routes.MainPage;
 import Server.Routes.Route;
+import Server.Routes.Start;
 
 import java.io.*;
 import java.net.Socket;
@@ -42,6 +44,8 @@ public class WebserverThread extends Thread {
     mainPage.setUserlists(userlists);
     mainPage.setRemainingQuestions(remainingQuestions);
     routes.add(mainPage);
+    routes.add(new Start());
+    routes.add(new Checkout());
     databases.add(new Database("Coffees", "id;name;url;price;image;description;type;aroma;espresso;strength;fairtrade;decaf", 10));
     this.logger = logger;
     dateformat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");

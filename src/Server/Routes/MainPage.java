@@ -204,7 +204,7 @@ public class MainPage extends Route{
                                 "</style>" +
                                 "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"selected('decaf')\"class='item2 no' id='decaf' value='no'> " +
+                                "<div onclick=\"selected('decaf')\"class='item2 remcolor no' id='decaf' value='no'> " +
                                 "               <img class=\"iconbig\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeinated\n" +
                                 "            </div>\n" +
@@ -219,7 +219,7 @@ public class MainPage extends Route{
                                 "</style>" +
                                 "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"selected('fairtrade')\"class='item2 no' id='fairtrade' value='no'>" +
+                                "<div onclick=\"selected('fairtrade')\"class='item2 remcolor no' id='fairtrade' value='no'>" +
                                 "               <img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>\n" +
@@ -234,11 +234,11 @@ public class MainPage extends Route{
                                 "</style>" +
                                 "<script>setImg(5);</script>"+
                         "<style>.questionMain {grid-template-columns: auto;}</style>" +
-                                "<div onclick=\"selected('decaf')\" class=\"item2 no\" id=\"decaf\" value=\"no\">" +
+                                "<div onclick=\"selected('decaf')\" class=\"item2 remcolor no\" id=\"decaf\" value=\"no\">" +
                                 "<img class=\"iconbig\" src=\"img/decaf.png\">\n" +
                                 "                Decaffeinated\n" +
                                 "            </div>"+
-                                "<div onclick=\"selected('fairtrade')\" class=\"item2 no\" id=\"fairtrade\" value=\"no\">" +
+                                "<div onclick=\"selected('fairtrade')\" class=\"item2 remcolor no\" id=\"fairtrade\" value=\"no\">" +
                                         "<img class=\"iconbig\" src=\"img/fairtrade.png\">\n" +
                                 "                Fairtrade\n" +
                                 "            </div>"+
@@ -332,8 +332,8 @@ public class MainPage extends Route{
                                 "<h3 class='price'>"+c.getPrice()+" €</h3>" +
                                 "</div></a>\n"));
                 StringBuilder buttons=new StringBuilder();
-                buttons.append("<div class='freeSample'>Get your free samples</div>");
-                buttons.append("<a href='https://www.tchibo.de/filialfinder'><div class='finder'>Try in the store <i class=\"fas fa-map-marker-alt\"></i></div></a>");
+                buttons.append("<div class='freeSample'>Get Your Free Samples</div>");
+                buttons.append("<a href='https://www.tchibo.de/filialfinder'><div class='finder'>Try In The Store <i class=\"fas fa-map-marker-alt\"></i></div></a>");
                 vars.put("%result", content.toString());
                 vars.put("%buttons", buttons.toString());
 
