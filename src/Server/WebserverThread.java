@@ -72,7 +72,7 @@ public class WebserverThread extends Thread {
     //System.out.println(requestLine);
     AtomicReference<String> otherLines = new AtomicReference<>("");
     in.lines().takeWhile(l->!l.equals("")).forEach(l->otherLines.getAndSet(otherLines.get()+"\n"+l));
-    System.out.println("=> Request header received");
+    //System.out.println("=> Request header received");
     HttpRequest request;
     try {
       request = new HttpRequest(requestLine, otherLines.get());

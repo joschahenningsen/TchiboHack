@@ -33,7 +33,7 @@ public class Erie {
       Socket client;
       try {
         client = serverSocket.accept();
-        System.out.println("*** Client connected!");
+        //System.out.println("*** Client connected!");
         WebserverThread wst = new WebserverThread(client, logger, userlists, remainingQuestions);
         wst.start();
       } catch (IOException e) {

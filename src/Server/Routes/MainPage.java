@@ -317,7 +317,8 @@ public class MainPage extends Route{
                     return 0;
                 });
 
-                coffees.forEach(c->System.out.println(c));
+                System.out.println("Top 5:");
+                coffees.stream().limit(5).forEach(c->System.out.println(c));
 
                 setTemplateFile("html/resultpage.html");
                 setBody(null);
